@@ -12,7 +12,12 @@ do {
     $choix = readline("Entrer votre choix: ");
     switch ($choix) {
         case '1':
-            echo "Vous avez choisi ajout \n";
+           $nom=readline("Enter le nom: ");
+           $prenom=readline("Enter le prenom: ");
+           $classe=readline("Enter la classe: ");
+           $newEtudiant=["nom"=>$nom,"prenom"=>$prenom,"classe"=>$classe];
+           $etudiants[]=$newEtudiant;
+           echo "$prenom $nom ajouter avec succes";
             break;
         case '2':
             echo "Vous avez choisi lister \n";
