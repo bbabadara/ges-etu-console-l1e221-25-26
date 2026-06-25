@@ -20,7 +20,13 @@ do {
            echo "$prenom $nom ajouter avec succes";
             break;
         case '2':
-            echo "Vous avez choisi lister \n";
+            foreach ($etudiants as $etudiant) {
+                echo "\n==============\n";
+                 echo "Nom : ".$etudiant["nom"]."\n";
+                 echo "Prenom : ".$etudiant["prenom"]."\n";
+                 echo "Classe : ".$etudiant["classe"]."\n";
+                echo "\n==============\n";
+            }
             break;
         case '3':
             echo "Vous avez choisi liste d'une classe \n";
