@@ -1,6 +1,9 @@
 <?php
 $etudiants = [
     ["nom"=>"Ndiaye","prenom"=>"Fatou","classe"=>"L1Dev"],
+    ["nom"=>"Ndiaye","prenom"=>"Moussa","classe"=>"L2Dev"],
+    ["nom"=>"Diop","prenom"=>"Penda","classe"=>"L1DN"],
+    ["nom"=>"Fall","prenom"=>"Abdou","classe"=>"L2Dev"],
     ["nom"=>"Diop","prenom"=>"Moustapha","classe"=>"L1Dev"]
 ];
 
@@ -29,7 +32,22 @@ do {
             }
             break;
         case '3':
-            echo "Vous avez choisi liste d'une classe \n";
+            $classe= readline("Entrer la classe: ");
+            $trouver=false;
+            foreach ($etudiants as $etudiant) {
+                if ($classe == $etudiant['classe']) {
+                    $trouver=true;
+                    echo "\n==============\n";
+                    echo "Nom : ".$etudiant["nom"]."\n";
+                    echo "Prenom : ".$etudiant["prenom"]."\n";
+                    echo "Classe : ".$etudiant["classe"]."\n";
+                    echo "\n==============\n";
+                }
+            }
+            if ($trouver==false) {
+                echo "Aucun etudiant dans la classe $classe\n";
+
+            }
             break;
         case '4':
             echo "Au revoir!";
